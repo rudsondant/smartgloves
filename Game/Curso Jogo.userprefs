@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inimigo.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PLayer.cs" Line="43" Column="29" />
+      <File FileName="Assets/Scripts/Bomba.cs" Line="44" Column="44" />
+      <File FileName="Assets/Scripts/Inimigo.cs" Line="48" Column="14" />
+      <File FileName="Assets/Scripts/Instanciador.cs" Line="29" Column="64" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
