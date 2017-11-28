@@ -10,9 +10,9 @@ function Update () {
 	if(jogador!=null){
 		var dist=Vector3.Distance(gameObject.transform.position,jogador.transform.position);
 		if(dist>=limite){
-			audio.mute=true;
+			GetComponent.<AudioSource>().mute=true;
 		}
 		else
-			audio.mute=false;
+			GetComponent.<AudioSource>().mute=false;
 	}
 }

@@ -6,6 +6,7 @@ import System.IO;
 var nomeJogador:String;
 var codigoJogador:String;
 var nomePorta:String;
+var onlyKeyboard:boolean;
 
 //Data e Hora
 var hora:System.DateTime;

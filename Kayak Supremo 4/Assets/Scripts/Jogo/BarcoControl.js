@@ -33,6 +33,8 @@ var contarTempo:boolean=false;
 var callGO:boolean=false;
 //Animação inicial da câmera
 
+public var onlyKeyboard = false;
+
 
 function Start(){
 	disBarre=Vector3.Distance(barreiraE.transform.position, barreiraD.transform.position);
@@ -42,35 +44,45 @@ function Start(){
 function Update() {
 	if(ativo){
 		if(entrada!=0 && media!=0){
-			velocidade=sensibilidade*(entrada/media);
+			if (!onlyKeyboard) {
+				velocidade=sensibilidade*(entrada/media);
+			} else {
+				//A formula anterior privilegiava o movimento para a esquerda quando utiliza o teclado
+				if (entrada < media){
+					velocidade = (media-entrada) * sensibilidade;
+				} else {
+					velocidade = (entrada-media) * sensibilidade;
+				}
+			}
 		}
-		if(entrada<media*0.6 && entrada>media*0.4){
+		//Isso tava atrapalhando, nao sei pra que serve
+		/*if(entrada<media*0.6 && entrada>media*0.4){
 			estado=0;
-			rigidbody.velocity.z=0;
-		}
-		
-		else if(entrada<media){ //Vai para direita;
-			rigidbody.velocity.z=velocidade;
+			GetComponent.<Rigidbody>().velocity.z=0;
+		} else */
+
+		if(entrada<media){ //Vai para direita;
+			GetComponent.<Rigidbody>().velocity.z=velocidade;
 			estado=1;
 			//animando
-			avatar.transform.animation["Remar"].speed=-velocidade/(2);
-			avatar.transform.animation.CrossFade("Remar");
+			avatar.transform.GetComponent.<Animation>()["Remar"].speed=-velocidade/(2);
+			avatar.transform.GetComponent.<Animation>().CrossFade("Remar");
 		}
 		
 		else if(entrada>media){ //Vai para esquerda;
-			rigidbody.velocity.z=-velocidade;
+			GetComponent.<Rigidbody>().velocity.z=-velocidade;
 			estado=-1;
-			avatar.transform.animation["Remar"].speed=velocidade/(2);
-			avatar.transform.animation.CrossFade("Remar");
+			avatar.transform.GetComponent.<Animation>()["Remar"].speed=velocidade/(2);
+			avatar.transform.GetComponent.<Animation>().CrossFade("Remar");
 		}
 		
 		else{
-			rigidbody.velocity.z=0;
+			GetComponent.<Rigidbody>().velocity.z=0;
 			estado=0;
 		}
 		
 		//Descendo o Rio
-			rigidbody.velocity.x = -3;
+			GetComponent.<Rigidbody>().velocity.x = -3;
 		//Seguindo 
 		seguidor.transform.position.x=transform.position.x;
 		Barreiras();
@@ -117,8 +129,8 @@ function Barreiras(){
 	var distE = Vector3.Distance(barreiraE.transform.position, transform.position);
 	
 	var distD = Vector3.Distance(barreiraD.transform.position, transform.position);
-	barreiraE.renderer.material.color=Color(0.92,0.52,0,1-2*(distE/(disBarre/2)));
-	barreiraD.renderer.material.color=Color(0.92,0.52,0,1-2*(distD/(disBarre/2)));
+	barreiraE.GetComponent.<Renderer>().material.color=Color(0.92,0.52,0,1-2*(distE/(disBarre/2)));
+	barreiraD.GetComponent.<Renderer>().material.color=Color(0.92,0.52,0,1-2*(distD/(disBarre/2)));
 }
 
 function OnGUI(){
@@ -166,8 +178,8 @@ function DoGameOver(){
 	GUI.skin=skinGO;
 	ativo=false;
 	//Pausado
-	avatar.transform.animation["Remar"].speed=0;
-	transform.rigidbody.velocity=Vector3(0,0,0);
+	avatar.transform.GetComponent.<Animation>()["Remar"].speed=0;
+	transform.GetComponent.<Rigidbody>().velocity=Vector3(0,0,0);
 	GUI.DrawTexture(Rect(0,0,Screen.width,Screen.height),backGroundGO); //Back
 	var tamB:float=Screen.width*0.25f;
 	

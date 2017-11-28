@@ -19,6 +19,8 @@ private var numPorta:int=0;
 private var nomeJogador:String="Lucas";
 private var codigoJogador:String="#001";
 
+private var onlyKeyboard = true;
+
 function Start () {
 	tamB2=new Vector2(Screen.width*0.1,Screen.width*0.04);
 	var tamB=Screen.width*0.13;
@@ -38,6 +40,10 @@ function Start () {
 		nomeJogador=CarregarNome();
 		bancoDados.nomeJogador=nomeJogador;
 	}
+	if(CarregarOnlyKeyboard()!=null){
+		onlyKeyboard=CarregarOnlyKeyboard();
+		bancoDados.onlyKeyboard=onlyKeyboard;
+	}
 
 }
 
@@ -47,16 +53,20 @@ function Update () {
 
 function OnGUI(){
 	if(enable){
+		var fontSize : int = 18;
+		var fieldSize : int = 26;
+
 		GUI.skin=skin;
 		GUI.DrawTexture(Rect(0,0,Screen.width,Screen.height),background);
 		GUI.skin.label.normal.textColor=Color(0.15,0.15,0.15,1);
 		GUI.skin.label.alignment=TextAnchor.UpperCenter;
-		GUI.skin.label.fontSize=Screen.width/25;
-		GUI.skin.textField.fontSize=Screen.width/45;
-		GUI.skin.button.fontSize=Screen.width/45;
+		GUI.skin.label.fontSize=fontSize;
+		GUI.skin.textField.fontSize=fontSize;
+		GUI.skin.button.fontSize=fontSize;
 		GUI.Label(Rect(0,Screen.height*0.02,Screen.width,Screen.width),"Configurações");
-		GUI.skin.label.fontSize=Screen.width/45;
+		GUI.skin.label.fontSize=fontSize;
 		GUI.skin.label.alignment=TextAnchor.UpperLeft;
+
 		//OK
 		if(rOk.Contains(Event.current.mousePosition)){
 				GUI.DrawTexture(Rect(0,0,Screen.width,Screen.height),bOk);
@@ -96,18 +106,18 @@ function OnGUI(){
 		//IP
 		GUI.Label(Rect(Screen.width*0.5,Screen.height*0.1,Screen.width,Screen.width),"--Conexão com NED_ClipBoard*--");
 		var ip=Network.player.ipAddress;
-		GUI.skin.label.fontSize=Screen.width/20;
+		GUI.skin.label.fontSize=fontSize;
 		GUI.Label(Rect(Screen.width*0.5,Screen.height*0.15,Screen.width,Screen.width),ip);
-		GUI.skin.label.fontSize=Screen.width/45;
+		GUI.skin.label.fontSize=fontSize;
 		GUI.Label(Rect(Screen.width*0.5,Screen.height*0.23,Screen.width,Screen.width),"Conectados: "+Network.connections.Length);
 		
 		//JOGADOR
 		GUI.Label(Rect(Screen.width*0.5,Screen.height*0.3,Screen.width,Screen.width),"-------Dados do Jogador-------");
 		//Nome Jogador
 		GUI.Label(Rect(Screen.width*0.5,Screen.height*0.35,Screen.width,Screen.width),"Nome:");
-		nomeJogador=GUI.TextField(Rect(Screen.width*0.58,Screen.height*0.35,Screen.width*0.35,tamB2.y),nomeJogador,30);
+		nomeJogador=GUI.TextField(Rect(Screen.width*0.58,Screen.height*0.35,Screen.width*0.35,fieldSize),nomeJogador,30);
 		GUI.Label(Rect(Screen.width*0.5,Screen.height*0.4,Screen.width,Screen.width),"Código:");
-		codigoJogador=GUI.TextField(Rect(Screen.width*0.58,Screen.height*0.4,tamB2.x,tamB2.y),codigoJogador,6);
+		codigoJogador=GUI.TextField(Rect(Screen.width*0.58,Screen.height*0.4,tamB2.x,fieldSize),codigoJogador,6);
 		if(!bancoDados.CheckUser(codigoJogador))
 		if(GUI.Button(Rect(Screen.width*0.69,Screen.height*0.41,Screen.width*0.2,tamB2.y),"Cadastra Novo")){
 			SalvarCodigo(codigoJogador);
@@ -122,7 +132,12 @@ function OnGUI(){
 		GUI.Button(Rect(Screen.width*0.5,Screen.height*0.55,Screen.width*0.2,tamB2.y),"Desenvolvedor");
 		GUI.Button(Rect(Screen.width*0.5,Screen.height*0.56+tamB2.y,Screen.width*0.2,tamB2.y),"Manual Luva");
 		GUI.Button(Rect(Screen.width*0.5,Screen.height*0.57+tamB2.y*2,Screen.width*0.2,tamB2.y),"Guia rápido");
-		
+
+		//Ativar TEAMBRIDGE luva
+		GUI.skin.toggle.fontSize=fontSize;
+		onlyKeyboard = GUI.Toggle(Rect(Screen.width*0.1,Screen.height*0.5, 400, fieldSize), onlyKeyboard, "Via TEAMBridge (Apenas o teclado é abilitado).");
+		bancoDados.onlyKeyboard=onlyKeyboard;
+		SalvarOnlyKeyboard(onlyKeyboard);
 	}	
 
 }
@@ -145,6 +160,8 @@ function Carregar(){
 function SalvarCodigo(valor:String){
 	PlayerPrefs.SetString("codigoJogador", valor);
 }
+
+
 
 function CarregarCodigo(){
 	var valor:String=null;
@@ -175,4 +192,20 @@ function CarregarNome(){
 
 }
 
+
+function SalvarOnlyKeyboard(valor:boolean){
+	PlayerPrefs.SetInt("onlyKeyboard", valor?1:0);
+}
+
+function CarregarOnlyKeyboard(){
+	var valor:boolean=false;
+	try{
+		valor = PlayerPrefs.GetInt("onlyKeyboard")?true:false;
+	}
+	catch(e){
+		valor=false;
+	}
+	return valor;
+
+}
 

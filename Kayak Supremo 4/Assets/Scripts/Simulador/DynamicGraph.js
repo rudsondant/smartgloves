@@ -25,7 +25,7 @@ static function Begin(nome:String):DynamicGraph{
 	var objeto:GameObject;
 	objeto = new GameObject();
 	objeto.name=nome;
-	objeto.AddComponent("DynamicGraph");
+	objeto.AddComponent.<DynamicGraph>();
 	var script:DynamicGraph= objeto.GetComponent(DynamicGraph);
 	return script;
 }

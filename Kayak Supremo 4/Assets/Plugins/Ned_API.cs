@@ -9,7 +9,7 @@ public class Ned_API : MonoBehaviour {
 	Thread send;
 	public bool ativo=false;
 	public bool ready=false; //Se a conexão com a luva está pronta ou não
-	public bool exibirLog=false;
+	private bool exibirLog=true;
 	public string Leitura;
 	public float mediaDedos;
 	public int[] valorDedos;
@@ -37,6 +37,7 @@ public class Ned_API : MonoBehaviour {
 	
 	public void StartConnection(string portName,int bauds){
 		portaSerial = new SerialPort();
+		print (portName + ":" + bauds);
 		portaSerial.PortName=portName;
 		portaSerial.BaudRate=bauds;
 		portaSerial.Parity=Parity.None;
@@ -49,10 +50,14 @@ public class Ned_API : MonoBehaviour {
 		read = new Thread(Ler);
 		read.Start();
 		ativo=true;
+
+
 	}
 	
 	void Ler(){
+		
 		while(true){
+			
 			//Escrevendo
 			if(ativarEscrita){
 				portaSerial.WriteLine(protocol);
@@ -65,9 +70,11 @@ public class Ned_API : MonoBehaviour {
 			//LENDO OS DADOS
 			else{
 				Leitura=portaSerial.ReadLine();
-				if(Leitura!=null)
-					ready=true;
+				if (Leitura != null) {
+					ready = true;
+				}
 			}
+
 			mediaDedos=MediaAtual();
 			//Setando máximos e mínimos
 			if(mediaDedos>mediaMax){
@@ -106,17 +113,13 @@ public class Ned_API : MonoBehaviour {
 	/********************************************
 	 * LerCada() - Separa a leitura em um vetor de String
 	 * *****************************************/
-	public string[] LerCada (){ return LerCada (",");}
-	public string[] LerCada (string split){
-		string[] retorno=Leitura.Split(split[0]);
-		return retorno;
-	}
-	
-	public int[] LerCadaInt(){return LerCadaInt(",");}
-	public int[] LerCadaInt(string split){
-		string[] newLeitura = LerCada(split);
+	public int[] LerCadaInt(){
+		
+		string[] newLeitura = Leitura.Split(';');
+
 		valorDedos = new int[newLeitura.Length];
-		for(int i=0; i<valorDedos.Length; i++){
+
+		for(int i=0; i<newLeitura.Length; i++){
  			valorDedos[i]=int.Parse(newLeitura[i]);
  		}
 		return valorDedos;

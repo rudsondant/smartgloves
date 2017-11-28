@@ -46,7 +46,7 @@ function FixedUpdate(){
 	  		rightColliding = false;*/
 	  	
 	  	acharPos();
-	  	Barco.rigidbody.velocity.x=correnteza;
+	  	Barco.GetComponent.<Rigidbody>().velocity.x=correnteza;
 	  	if(Physics.Raycast(Barco.transform.position,Vector3.forward,1))
 			rightColliding = true;
 		else 
@@ -120,12 +120,12 @@ function acharPos(){
 
 function Animacoes(){
 	if(Entrada<0){
-		Barco.animation["Remar"].speed=-Entrada/(2.5);
-		Barco.animation.CrossFade("Remar");
+		Barco.GetComponent.<Animation>()["Remar"].speed=-Entrada/(2.5);
+		Barco.GetComponent.<Animation>().CrossFade("Remar");
 	}
 	if(Entrada>0){
-		Barco.animation["Remar"].speed=Entrada/(2.5);
-		Barco.animation.CrossFade("Remar");
+		Barco.GetComponent.<Animation>()["Remar"].speed=Entrada/(2.5);
+		Barco.GetComponent.<Animation>().CrossFade("Remar");
 	}
 }
 

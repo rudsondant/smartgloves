@@ -65,7 +65,7 @@ function Start () {
 		print(e.Message);
 	}
 	//Abre a conexão a 57600 bauds
-	ned.StartConnection(nomePorta,57600);
+	ned.StartConnection(nomePorta,115200);
 	print("Luva conectada");
 	//--------------------------------------------------
 	

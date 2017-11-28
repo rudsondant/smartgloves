@@ -1,0 +1,293 @@
+fileFormatVersion: 2
+guid: 5a7684f1a8dcf8449bf507b615f20723
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Esqueleto
+    100002: Cabe__a
+    100004: Pesco__o
+    100006: Sphere_4
+    100008: Bra_Esquerdo
+    100010: Sphere_3
+    100012: Ante_Esquerdo
+    100014: Sphere_2
+    100016: Bra_Direito
+    100018: Sphere
+    100020: Ante_Direito
+    100022: Bracos
+    100024: Corpo
+    100026: Joint_2_2
+    100028: Joint_1_2
+    100030: Esquerdo
+    100032: Joint_2
+    100034: Joint_1
+    100036: Dierito
+    100038: Avatar
+    100040: Pa02
+    100042: Pa01
+    100044: Borracha
+    100046: Mao_Direita_2
+    100048: Mao_Direita
+    100050: Mao_Esquerda_2
+    100052: Mao_Esquerda
+    100054: Remo_2
+    100056: Remo
+    100058: Bordas
+    100060: Topo_1
+    100062: Cabos
+    100064: Kayak
+    100066: Jogador
+    100068: Borracha_Direita
+    100070: //RootNode
+    100072: Borracha_Esquerda
+    400000: Esqueleto
+    400002: Cabe__a
+    400004: Pesco__o
+    400006: Sphere_4
+    400008: Bra_Esquerdo
+    400010: Sphere_3
+    400012: Ante_Esquerdo
+    400014: Sphere_2
+    400016: Bra_Direito
+    400018: Sphere
+    400020: Ante_Direito
+    400022: Bracos
+    400024: Corpo
+    400026: Joint_2_2
+    400028: Joint_1_2
+    400030: Esquerdo
+    400032: Joint_2
+    400034: Joint_1
+    400036: Dierito
+    400038: Avatar
+    400040: Pa02
+    400042: Pa01
+    400044: Borracha
+    400046: Mao_Direita_2
+    400048: Mao_Direita
+    400050: Mao_Esquerda_2
+    400052: Mao_Esquerda
+    400054: Remo_2
+    400056: Remo
+    400058: Bordas
+    400060: Topo_1
+    400062: Cabos
+    400064: Kayak
+    400066: Jogador
+    400068: Borracha_Direita
+    400070: //RootNode
+    400072: Borracha_Esquerda
+    2300000: Cabe__a
+    2300002: Sphere_4
+    2300004: Bra_Esquerdo
+    2300006: Sphere_3
+    2300008: Ante_Esquerdo
+    2300010: Sphere_2
+    2300012: Bra_Direito
+    2300014: Sphere
+    2300016: Ante_Direito
+    2300018: Corpo
+    2300020: Pa02
+    2300022: Pa01
+    2300024: Borracha
+    2300026: Mao_Direita_2
+    2300028: Mao_Esquerda_2
+    2300030: Remo_2
+    2300032: Bordas
+    2300034: Topo_1
+    2300036: Cabos
+    3300000: Cabe__a
+    3300002: Sphere_4
+    3300004: Bra_Esquerdo
+    3300006: Sphere_3
+    3300008: Ante_Esquerdo
+    3300010: Sphere_2
+    3300012: Bra_Direito
+    3300014: Sphere
+    3300016: Ante_Direito
+    3300018: Corpo
+    3300020: Pa02
+    3300022: Pa01
+    3300024: Borracha
+    3300026: Mao_Direita_2
+    3300028: Mao_Esquerda_2
+    3300030: Remo_2
+    3300032: Bordas
+    3300034: Topo_1
+    3300036: Cabos
+    4300000: Cabos
+    4300002: Topo_1
+    4300004: Bordas
+    4300006: Remo_2
+    4300008: Mao_Esquerda_2
+    4300010: Mao_Direita_2
+    4300012: Borracha
+    4300014: Pa01
+    4300016: Pa02
+    4300018: Ante_Direito
+    4300020: Sphere
+    4300022: Bra_Direito
+    4300024: Sphere_2
+    4300026: Ante_Esquerdo
+    4300028: Sphere_3
+    4300030: Bra_Esquerdo
+    4300032: Sphere_4
+    4300034: Cabe__a
+    4300036: Corpo
+    7400000: C4D Animation Take
+    7400002: Remar
+    7400004: Parado
+    7400006: Parar
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Remar
+      takeName: 
+      firstFrame: 10
+      lastFrame: 109
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Parado
+      takeName: 
+      firstFrame: 120
+      lastFrame: 149
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Parar
+      takeName: 
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

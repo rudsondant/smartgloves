@@ -8,7 +8,7 @@ var mediaAberta:float;
 var mediaFechada:float;
 var media:float;
 function Start () {
-	ned.StartConnection("COM5",57600);
+	ned.StartConnection("COM5",115200);
 	text=new Texture2D(1,1);
 	text.SetPixel(1,1,Color(0,0.5,0.6));
 	text.Apply();

@@ -36,7 +36,7 @@ public class PortaSerial  : MonoBehaviour {
         DontDestroyOnLoad(transform.gameObject);
     }
 	//Abrindo a porta Serial
-	public void Abrir(int numPorta,int timeOut){Abrir(numPorta,9600,timeOut);} //Por padrão
+	public void Abrir(int numPorta,int timeOut){Abrir(numPorta,115200,timeOut);} //Por padrão
 	public void Abrir (int numPorta,int baud,int timeOut){ 
 		Porta= new SerialPort("COM"+numPorta,baud);	
 	
