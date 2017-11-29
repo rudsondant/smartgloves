@@ -3,7 +3,7 @@ using System.Collections;
 using System.IO.Ports;
 
 public class Simulador : MonoBehaviour {
-	static SerialPort porta = new SerialPort("COM11", 9600); 
+	static SerialPort porta = new SerialPort("COM3", 115200); 
 	public static Simulador instance;
 	public static int dedo1, dedo2, dedo3, dedo4, dedo5;
 

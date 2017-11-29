@@ -109,7 +109,7 @@ public class Calibracao : MonoBehaviour {
 			}
 		}
 
-		t = GUI.TextField (new Rect (Screen.width-700, Screen.height-180,165,20), t);
+		t = GUI.TextField (new Rect (Screen.width-800, Screen.height-180,200,30), t);
 
 		// botão de Salvar Calibração
 		bool salvar = GUI.Button(new Rect(Screen.width-600, Screen.height-250,64,64), btnSalvaCalibracao);
@@ -155,11 +155,13 @@ public class Calibracao : MonoBehaviour {
 
 		if (salvar) {
 			if(this.esquerda){
+				abrir.SetActive(false);
 				abertoCalibrado.SetActive(false);
 				fechar.SetActive (true);
 				saveCalibracao();
 				this.esquerda = false;
 			}else{
+				fechar.SetActive (false);
 				fechadoCalibrado.SetActive(false);
 				saveCalibracao();
 				sucesso.SetActive(true);

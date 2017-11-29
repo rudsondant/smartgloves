@@ -50,6 +50,8 @@ public class PLayer : MonoBehaviour {
 	public bool teclado;
 	public static bool UseTeclado;
 
+	private static bool lerLuva = true;
+
 	void Start () {
 
 		gerenciador = FindObjectOfType (typeof(Gerenciador)) as Gerenciador;
@@ -175,9 +177,13 @@ public class PLayer : MonoBehaviour {
 		}
 	}
 
+	void OnApplicationQuit(){
+		lerLuva = false;
+	}
+
 	public void Ler(){
 
-		while (true) {
+		while (lerLuva) {
 
 			try {
 				if (Luva.portaSerial.IsOpen) {
